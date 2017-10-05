@@ -1,8 +1,3 @@
-<%-- 
-    Document   : read
-    Created on : Oct 5, 2017, 2:09:33 PM
-    Author     : Greg
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -11,7 +6,10 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
+    
+    <% String table = (String) request.getAttribute("table"); %>
     <body>
-        <h1>Hello World!</h1>
+        <h1>The Green Bay Packers</h1>
+        <%= table %>
     </body>
 </html>
