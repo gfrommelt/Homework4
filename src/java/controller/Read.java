@@ -77,7 +77,7 @@ public class Read extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException { //Made me add this error exception which it did not in the video. Likely the mistake
         try {
             ReadQuery rq = new ReadQuery();
             

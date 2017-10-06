@@ -51,7 +51,7 @@ public class ReadQuery {
  public void doRead() {
      
         try {
-            String query = "Select * from players";
+            String query = "SELECT * FROM PLAYERS";
             
             PreparedStatement ps = conn.prepareStatement(query);
             this.results = ps.executeQuery();
@@ -73,13 +73,10 @@ public String getHTMLtable() {
                 player.setPlayerID(this.results.getInt("playerID"));
                 player.setPlayerName(this.results.getString("playerName"));
                 player.setPlayerNumber(this.results.getInt("playerNumber"));
-                player.setPlayerPosition(this.results.getString("playerID"));
+                player.setPlayerPosition(this.results.getString("playerPosition"));
                 player.setPlayercollege(this.results.getString("playerCollege"));
                 
                 table +="<tr>";
-                table +="<td>";
-                table += player.getPlayerID();
-                table +="</td>";
                 table +="<td>";
                 table += player.getPlayerName();
                 table +="</td>";
