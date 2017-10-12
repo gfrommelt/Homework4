@@ -14,7 +14,7 @@
     <body>
         <h1>Add a New Player</h1>
         
-        <form name="addForm" action="addFriend" method="get">
+        <form name="addForm" action="addPlayer" method="get">
             <label>Player Name:</label>
                 <input type="text" name="name" value=""/>
                 <br>
