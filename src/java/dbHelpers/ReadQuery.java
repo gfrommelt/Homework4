@@ -64,13 +64,14 @@ public class ReadQuery {
 public String getHTMLtable() {
     
     String table = "";
-    table += "<table border=1>";
+    table += "<table>";
    
     table+="<tr>";
          table+="<th>Player Name</th>";
          table+="<th>Number Name</th>";
          table+="<th>Position</th>";
          table+="<th>College</th>";
+         table+="<th>Delete?</th>";
     table+="</tr>";
         try {
             while(this.results.next()){

@@ -1,10 +1,19 @@
 
+
+table {
+
+    width: 98%;
+     border-collapse: collapse;
+    background-color: coral;
+}
+
 table, th, td{
     
-   table-border: 1px tan;
+   border: 2px solid black;
    
    
 }
+
 body{
     background-color: #D2B48C;
 }
@@ -17,22 +26,28 @@ th{
     
 }
 
-tr:nth-child(even) {background-color: #F2F2F2}
+tr:nth-child(even) {background-color: #F2F2F2;}
+
 table, th{
     padding: 10px;
     
 }
 td{
     vertical-align: bottom;
-    background-color: #F08080;
-    color: #FFFFFF;
+   border-collapse: collapse;
+    color: black;
     
 }
 
-table {
-    border-collapse: collapse;
-    width: 98%;
-    border: 5px black;
-    
+h1{ color:#F08080;}
+
+
+input[type=text] {
+    border: 2px solid coral;
+    border-radius: 4px;
+}
+
+label{
+    color: white;
     
 }
