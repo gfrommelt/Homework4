@@ -57,7 +57,7 @@ public class AddQuery {
     public void doAdd (Players player){
         
         try {
-            String query = "INSERT INTO players (playerName, playerNumber, playerPosition, playerCollege) Values (?,?,?,?";
+            String query = "INSERT INTO players (playerName, playerNumber, playerPosition, playerCollege) Values (?,?,?,?)";
             
             PreparedStatement ps = conn.prepareStatement(query);
             

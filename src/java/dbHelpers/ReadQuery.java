@@ -66,6 +66,12 @@ public String getHTMLtable() {
     String table = "";
     table += "<table border=1>";
    
+    table+="<tr>";
+         table+="<th>Player Name</th>";
+         table+="<th>Number Name</th>";
+         table+="<th>Position</th>";
+         table+="<th>College</th>";
+    table+="</tr>";
         try {
             while(this.results.next()){
                 
@@ -76,6 +82,8 @@ public String getHTMLtable() {
                 player.setPlayerPosition(this.results.getString("playerPosition"));
                 player.setPlayercollege(this.results.getString("playerCollege"));
                 
+               
+              
                 table +="<tr>";
                 table +="<td>";
                 table += player.getPlayerName();
