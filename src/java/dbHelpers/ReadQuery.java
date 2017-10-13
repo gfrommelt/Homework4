@@ -97,6 +97,9 @@ public String getHTMLtable() {
                 table +="<td>";
                 table += player.getPlayercollege();
                 table +="</td>";
+                 table +="<td>";
+                table += "<a href=delete?playerID=" + player.getPlayerID() + ">Delete</a>";
+                table +="</td>";
                 
                 
                 table +="</tr>";
