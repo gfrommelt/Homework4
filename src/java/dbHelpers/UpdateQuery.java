@@ -10,7 +10,6 @@ import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Properties;
 import java.util.logging.Level;
@@ -21,79 +20,64 @@ import model.Players;
  *
  * @author Greg
  */
-public class ReadRecord {
+public class UpdateQuery {
+    
     private Connection conn;
-    private ResultSet results;
     
-    private Players player = new Players();
-    private int playerID;
-    
-    
-    public ReadRecord(int playerID) throws SQLException {
+    public UpdateQuery()throws SQLException {
      
      Properties props = new Properties();
      InputStream instr = getClass().getResourceAsStream("dbConn.properties");
         try {
             props.load(instr);
         } catch (IOException ex) {
-            Logger.getLogger(ReadRecord.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UpdateQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
         try {
             instr.close();
         } catch (IOException ex) {
-            Logger.getLogger(ReadRecord.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UpdateQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
      
      String driver = props.getProperty("driver.name");
      String url = props.getProperty("server.name");
      String username = props.getProperty("user.name");
      String passwd = props.getProperty("user.password");
-        this.playerID = playerID;
-     
-     try {
+        try {
             Class.forName(driver);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ReadRecord.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UpdateQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
      conn = DriverManager.getConnection(url, username, passwd);
      
      
  }
    
-  public void doRead() {
+public void doUpdate(Players player){
+
         try {
-            String query = "SELECT * FROM players WHERE playerID = ?";
+            String query = "UPDATE players SET playerName = ?, playerNumber = ?, playerPosition = ?, playercollege = ? WHERE playerID = ?";
             
             PreparedStatement ps = conn.prepareStatement(query);
             
-            ps.setInt(1, playerID);
+            ps.setString(1, player.getPlayerName());
+            ps.setInt(2, player.getPlayerNumber());
+            ps.setString(3, player.getPlayerPosition());
+            ps.setString(4, player.getPlayercollege());
+            ps.setInt(5, player.getPlayerID());
             
-            this.results = ps.executeQuery();
+            ps.executeUpdate();
             
-            this.results.next();
-            
-            player.setPlayerID(this.results.getInt("playerID"));
-            player.setPlayerName(this.results.getString("playerName"));
-            player.setPlayerNumber(this.results.getInt("playerNumber"));
-            player.setPlayerPosition(this.results.getString("playerPosition"));
-            player.setPlayercollege(this.results.getString("playerCollege"));
-        
-        
-        
-        
         } catch (SQLException ex) {
-            Logger.getLogger(ReadRecord.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UpdateQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-    
+
+
+
 }
 
-public Players getPlayer(){
-    
-    return this.player;
-    
-    
-}
 
-}  
+
+}
+    
 
