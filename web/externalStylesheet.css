@@ -14,10 +14,12 @@ table, th, td{
    
 }
 
+
+
 body{
     background-color: #D2B48C;
 }
-tr:hover {background-color: #CCCCCC}
+
 th{
     height: 40px;
     text-align: left;
@@ -27,6 +29,7 @@ th{
 }
 
 tr:nth-child(even) {background-color: #F2F2F2;}
+tr:hover {background-color: #CCCCCC}
 
 table, th{
     padding: 10px;
@@ -41,8 +44,8 @@ td{
 
 h1{ color:#F08080;}
 
-
-input[type=text] {
+input[readonly] {background-color:gray;}
+input{
     border: 2px solid coral;
     border-radius: 4px;
 }

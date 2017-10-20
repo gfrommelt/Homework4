@@ -13,6 +13,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+         <link rel="stylesheet" type="text/css" href="externalStylesheet.css">
         <title>Update a Player</title>
     </head>
     <title>Update a Player</title>
@@ -23,7 +24,7 @@
         <form name="updateForm" action="updatePlayer" method="get">
             <label>Player ID:</label>
                 <br>
-            <input type="text" name="id" value="<%= player.getPlayerID() %>" />
+            <input type="text" name="id" value="<%= player.getPlayerID() %>" readonly />
                 <br>
             
             <label>Player Name:</label>

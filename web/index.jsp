@@ -16,6 +16,9 @@
         <h1>The Green Bay Packers Roster</h1>
         
         <a href="read">View All Players</a>
+        <br><br>
+        
+         <a href="search.jsp">Search All Players</a>
         
     </body>
 </html>
