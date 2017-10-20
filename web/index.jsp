@@ -13,12 +13,19 @@
         <title>The Green Bay Packers</title>
     </head>
     <body>
-        <h1>The Green Bay Packers Roster</h1>
+        <div class="wrap">
+
+            <%@include file="includes/header.jsp" %>
+             <%@include file="includes/menu.jsp" %>
+             <div class="main">
+                 
+                 
+             </div>
         
-        <a href="read">View All Players</a>
-        <br><br>
-        
-         <a href="search.jsp">Search All Players</a>
-        
+             
+             <%@include file="includes/footer.jsp" %>
+        </div>
     </body>
+    
+    
 </html>

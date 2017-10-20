@@ -19,6 +19,10 @@
     <title>Update a Player</title>
     </head>
     <body>
+         <div class="wrap">
+
+            <%@include file="includes/header.jsp" %>
+             <%@include file="includes/menu.jsp" %>
         <h1>Update a Player</h1>
         
         <form name="updateForm" action="updatePlayer" method="get">
@@ -47,5 +51,10 @@
             
         </form>
             
-    </body>
+        </div>
+        
+             
+             <%@include file="includes/footer.jsp" %>
+        </div>
+</body>
 </html>

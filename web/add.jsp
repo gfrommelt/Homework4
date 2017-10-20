@@ -13,6 +13,10 @@
         <title>Add a New Player</title>
     </head>
     <body>
+         <div class="wrap">
+
+            <%@include file="includes/header.jsp" %>
+             <%@include file="includes/menu.jsp" %>
         <h1>Add a New Player</h1>
         
         <form name="addForm" action="addPlayer" method="get">
@@ -35,5 +39,10 @@
             
         </form>
             
-    </body>
+        </div>
+        
+             
+             <%@include file="includes/footer.jsp" %>
+        </div>
+</body>
 </html>
